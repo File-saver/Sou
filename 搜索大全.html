@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>浏览器</title>
+	<style>
+        .search {
+            -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+            padding: 10px 30px;
+            font-size:38px;
+            font-family: "华文新魏";
+            text-align: center;
+            background-color: #29f;
+            color: white;
+            border: 0px solid white;
+            border-radius:4px;
+        }
+        .search:hover {
+            background-color: #27f;
+        }
+        .text {
+            padding: 12px 10px;
+            font-size:28px;
+            text-align: left;
+            background-color: white;
+            color: black;
+            border: 2px solid grey;
+            border-radius:3px;
+        }
+    </style>
+	<script type="text/javascript">
+		function search(action) {
+			var radios = document.getElementById("list").engine;
+			for(i=0;i<radios.length;i++){
+				if(radios[i].checked){
+					var engine = radios[i].value;
+				}
+			}
+			if(engine=="baidu"){window.open("https://www.baidu.com/baidu?tn=monline_3_dg&ie=utf-8&wd="+text.value);}
+			if(engine=="360"){window.open("https://www.so.com/s?ie=utf-8&fr=dlm&ls=n1bcffc0294&src=home_dlm&q="+text.value);}
+			if(engine=="bing"){window.open("https://cn.bing.com/search?q="+text.value+"&qs=n&FORM=BESBTB&sp=-1&pq=%E4%BD%A0%E5%A5%BD&sc=10-2&sk=&cvid=6F5709A1D582442A98462D80F0A7E7C3");}
+			if(engine=="sougou"){window.open("https://www.sogou.com/web?query="+text.value+"&_asf=www.sogou.com&_ast=1565412224&w=01019900&p=40040100&ie=utf8&from=index-nologin&s_from=index&sut=2827&sst0=1565412223742&lkt=0%2C0%2C0&sugsuv=00BB436FD3A1F0365A7115EA7E38E340&sugtime=1565412223742");}
+			if(engine=="taobao"){window.open("https://ai.taobao.com/search/index.htm?key="+text.value+"&pid=mm_28347190_2425761_13466329");}
+			if(engine=="dangdang"){window.open("http://search.dangdang.com/?key="+text.value+"&act=input");}
+			if(engine=="jd"){window.open("https://search.jd.com/Search?keyword="+text.value+"&enc=utf-8&pvid=de6a35f64df749bfb69f4502f2580b37");}
+			if(engine=="tmall"){window.open("https://list.tmall.com/search_product.htm?q="+text.value+"&type=p&vmarket=&spm=875.7931836%2FB.a2227oh.d100&from=mallfp..pc_1_searchbutton")}
+			if(engine=="url"){window.open(text.value);}
+		}
+
+	</script>
+</head>
+<body>
+	<b>
+		<div style="text-align:center;">
+			<input class="text" id="text" value=""size="60">
+			<button class="search" type="submit" onclick="search()">搜 索</button>
+		<form id="list" method="post" action="">
+			<h4>
+				<input type="radio" name="engine" value="360" checked>360搜索
+				<input type="radio" name="engine" value="baidu">百度
+				<input type="radio" name="engine" value="bing">必应
+				<input type="radio" name="engine" value="sougou">搜狗
+				<p>
+				<input type="radio" name="engine" value="taobao">淘宝
+				<input type="radio" name="engine" value="dangdang">当当
+				<input type="radio" name="engine" value="jd">京东
+				<input type="radio" name="engine" value="tmall">天猫
+				<p>
+				<input type="radio" name="engine" value="url">网址
+			</h4>
+		</form>
+		</div>
+	</b>
+</body>
+</html>
